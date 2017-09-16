@@ -1,12 +1,12 @@
 # top
 ## 起動コマンド
-- `top`: CPU使用率順にソート
-- `top -a`: メモリ使用率順にソート
-- `top -p [PID]`: 特定のプロセスを監視
-- `top -d1`: 1秒おきに更新
+- `top`: sort by CPU usage
+- `top -a`: sort by MEM usage
+- `top -p [PID]`: oversee specify process
+- `top -d1`: refresh by 1sec
 
 ## 操作方法
-- `Shift+p`: CPU使用率順にソート
-- `Shift+m`: メモリ使用率順にソート
-- `k`: killコマンド送信。[pid]-[signal]の順
-- `u`: Userフィルター
+- `Shift+p`: sort by CPU usage
+- `Shift+m`: sort by MEM usage
+- `k`: send kill signal. [pid]-[signal]
+- `u`: filter by execute user
