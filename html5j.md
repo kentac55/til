@@ -1,0 +1,122 @@
+# html5jメモ
+## WebRTC
+https://www.slideshare.net/yusukenaka52/webrtc-80090858
+- Safari(モバイル版)がWebRTCに対応したことによってWebRTC普及の土台は整ったのでは
+- 対応することによって・・・
+    - アプリを作る必要がない
+    - 導入ハードルがぐっと下がる
+- コラボレーションアプリの通話の90%がWebRTCに
+- 採用例
+    - Mixer(M$のアレ)もWebRTC使っている
+    - Pixiv Sketch Live
+    - Peer5(Serverless CDN(P2PでCli→Cliへデータを配信
+    - Streamroot(Serverless CDN(
+    - Weblio等のオンライン英会話もSkypeからWebRTCへ移行
+    - カスタマーサポート(日本では普及はまだまだ
+    - 遠隔診療
+    - IoT
+    - マッチングアプリ
+- 採用する目的
+    - ~~既存サービスの置き換えでコスト削減~~
+        - しっかり作るとコストはかかる
+    - 付加価値向上
+        - これで利益を更に伸ばすという目的の方を強くするべき
+- 進化が早いのと考えることが多い・・・
+    - https://github.com/webrtc/adapter/
+    - これでいい感じにやってくれる
+- ブラウザ間で差異がちらほら
+    - 機能差分はAdapter.jsでも吸収できないので、アプリの作り込みで吸収する必要がある
+- 環境も利用者で差異がある・・・
+    - `getUserMedia()` とか・・・
+    - しっかり調査する必要あり
+- 複数人数通話について
+    - フルメッシュ(P2P)
+    - MCU(S-C)
+    - SFU(主流)
+        - PaaSでもあるよ
+
+## ブラウザ
+`@dynamitter`
+- FirefoxOSは終わってた
+- HTML5(3.2〜5, XHTML〜1.1)終了(Obsolete)提案
+    - 終了というより、deprecatedなレファレンスにするよみたいな
+- Progressive Web Application
+    - Service WOrkers, Push, Payment Request API
+- Chrome Update
+    - 56
+        - Web Bluetooth API(Raspberry Piとかにどうぞ)
+        - CSS position: stickey(
+    - 57
+        - CSS Grid Layout
+        - Media Session API(スマホのロック画面とかに音楽情報を出してくれるやつ)
+    - 58
+        - IndexedDB 2.0
+            - バイナリ(画像)データをホイホイ突っ込むことができる
+        - フル画面アプリ(display: fullscreen)
+            - 戻るボタンとかも非表示にできる
+        - CSS display:flow-root
+            - clear fix Hackともお別れ
+    - 59
+        - Headless Browsing
+            - UIテストとか自動化してこ
+        - Notification表示がOSX標準UIに
+        - Image Capture API
+            - 写真取れるよ
+    - 60
+        - Paint Timing API
+            - First Paint(onLoad()よりも前)等を測定できる
+            - モバイル全盛では全ファイル読み込むよりもある程度画面が描画された時間が大切
+            - スライド見たほうが良さげ
+    - 61
+        - JSMサポート
+        - Payment Request API
+        - Web Share API, WebUSB
+- Edge
+    - MS Edge Summit 2017のKeynote
+    - SONAR - WebサイトのLintingツール
+        - (HSHint, JSLint, TSLint)等まとめてLintできる
+        - http://www.sonarlint.org/
+    - epub readerついてる
+    - 16
+        - service worker
+        - WebVR, WebRTC 1.0
+        - レンダリングオフロード
+- Firefox
+    - 50
+    - 51
+        - FLAC対応
+        - WebGL2
+        - Indexed DB2.0
+        - HTTPページでパスワード入力に警告
+        - SHA-1 cert終了
+    - 52
+    - 53
+        - Quantum Compositor
+            - Compositorを別プロセスに分離
+        - CSS Masks
+        - CSS display: flow-root
+        - ビデオプレイヤーのUI変更
+- Safari
+    - 10.1
+        - CSS Grid Layout
+        - Fetch API, IndexedDB 2.0
+        - Custom Elements(components)
+        - Pointer Lock, Gamepad
+        - async function
+    - 11.0
+        - WebAssemblyサポート
+        - Resource Timing2, User Timing2
+        - Drang and Drop
+        - Variable Fonts
+            - 一つのフォントから複数のウェイトを設定できる
+
+## 次世代決済法
+https://docs.google.com/presentation/d/e/2PACX-1vS6TvUO3iMcepLt4EtvaQhwhqzWrlvghHiTpUvzbgM-T4pd4oYCJ3c1FSAe9MPN1EgmoiMpPthJqghQ/pub?start=false&loop=false&delayms=3000#slide=id.g16c14f1065_0_0
+- Web Payment APIだけ覚えておこう
+    - iOS SafariはApple Payのみの対応だったが、今後対応予定
+    - `options.requestShipping: false` だとデジタル商品の時なんかに使える・・・shippingする必要ないし
+- クレカ番号は持たないほうが良い
+    - 代行業者を使うべきのでは
+
+## LT大会
+
